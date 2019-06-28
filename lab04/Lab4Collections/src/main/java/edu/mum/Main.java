@@ -8,6 +8,7 @@ import java.util.List;
 
 public class Main {
     private static EntityManagerFactory emf;
+
     public static void main(String[] args) throws Exception {
         emf = Persistence.createEntityManagerFactory("cs544");
 
@@ -51,7 +52,6 @@ public class Main {
         em = emf.createEntityManager();
         em.getTransaction().begin();
 
-
         TypedQuery<Flight> query2 = em.createQuery("from Flight", Flight.class);
         List<Flight> list2 = query2.getResultList();
         for (Flight i : list2) {
@@ -59,5 +59,33 @@ public class Main {
         }
         em.getTransaction().commit();
         em.close();
+
+
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+
+        School school = new School("MUM");
+        Student student = new Student(1, "Handsome");
+        Student student2 = new Student(2, "Mohamed");
+        school.addStudent(student);
+        school.addStudent(student2);
+        em.persist(school);
+
+        em.getTransaction().commit();
+        em.close();
+
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+
+
+        TypedQuery<School> query3 = em.createQuery("from School", School.class);
+        List<School> list3 = query3.getResultList();
+        for (School i : list3) {
+            System.out.println(i);
+        }
+        em.getTransaction().commit();
+        em.close();
+
+
     }
 }
