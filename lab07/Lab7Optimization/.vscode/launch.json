@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - App",
+            "request": "launch",
+            "mainClass": "edu.mum.cs544.App",
+            "projectName": "Lab7-Optimization"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Populate",
+            "request": "launch",
+            "mainClass": "edu.mum.cs544.Populate",
+            "projectName": "Lab7-Optimization"
+        }
+    ]
+}
