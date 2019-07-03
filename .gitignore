@@ -23,3 +23,8 @@
 hs_err_pid*
 **/target
 **/.idea/workspace.xml
+**/.DS_Store
+**/.settings
+**/.vscode
+**/.classpath
+**/.project
