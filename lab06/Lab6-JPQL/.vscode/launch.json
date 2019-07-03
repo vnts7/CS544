@@ -1,0 +1,11 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - App",
+      "request": "launch",
+      "mainClass": "edu.mum.cs544.App",
+      "projectName": "W2D3-JPQL"
+    }
+  ]
+}
