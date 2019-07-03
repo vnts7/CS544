@@ -20,7 +20,7 @@ public class Account {
     @ManyToOne(cascade = CascadeType.ALL)
     private Customer customer;
 
-
+    public Account(){}
     public Account(long accountnr) {
         this.accountnumber = accountnr;
     }

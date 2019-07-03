@@ -11,7 +11,7 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-
+    public Customer(){}
     public Customer(String name) {
         this.name = name;
     }

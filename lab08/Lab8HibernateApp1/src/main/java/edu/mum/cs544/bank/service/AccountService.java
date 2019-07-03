@@ -28,6 +28,7 @@ public class AccountService implements IAccountService {
 
     private void txCommit() {
         em().getTransaction().commit();
+        em().close();
     }
 
     public AccountService() {
@@ -58,12 +59,18 @@ public class AccountService implements IAccountService {
     }
 
     public Account getAccount(long accountNumber) {
+        txBegin();
         Account account = accountDAO.loadAccount(accountNumber);
+        txCommit();
         return account;
     }
 
     public Collection<Account> getAllAccounts() {
-        return accountDAO.getAccounts();
+        txBegin();
+        Collection<Account> a = accountDAO.getAccounts();
+        txCommit();
+        return a;
+        
     }
 
     public void withdraw(long accountNumber, double amount) {
